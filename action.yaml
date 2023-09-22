@@ -12,6 +12,11 @@ inputs:
     description: GITHUB_TOKEN
     required: true
 
+outputs:
+  image-tag:
+    description: "Image tag"
+    value: ${{ fromJSON(steps.meta.outputs.json).tags[0] }}
+
 runs:
   using: composite
   steps:
